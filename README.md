@@ -15,17 +15,22 @@ git clone https://github.com/jose-luiz-18-bd/test-project-task
 cd test-project-task
 ```
 
-2. Instale as dependências:
+2. Instale as dependências frontend:
 ```bash
 npm install
 ```
 
-3. Inicie o servidor backend:
+3. Instale as dependências backend:
+```bash
+bun install
+```
+
+4. Inicie o servidor backend:
 ```bash
 bun run index.ts
 ```
 
-4. Inicie o servidor frontend:
+5. Inicie o servidor frontend:
 ```bash
 npm run dev
 ```
@@ -77,6 +82,7 @@ GET http://localhost:3000/api/scrape?keyword=livro
 - CSS
 - JavaScript
 - Bun
+- Express
 - Axios
 - JSDOM
 - TypeScript

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Busca Amazon</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+  <h1>Buscar Produtos na Amazon</h1>
+
+  <input type="text" id="keyword" placeholder="Digite o que deseja buscar" />
+  <button onclick="buscar()">Buscar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    async function buscar() {
+      const keyword = document.getElementById('keyword').value;
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = 'Carregando...';
+
+      try {
+        const res = await fetch(`http://localhost:3000/api/scrape?keyword=${encodeURIComponent(keyword)}`);
+        const data = await res.json();
+
+        if (!Array.isArray(data)) {
+          resultado.innerHTML = '<p>Resposta inesperada do servidor.</p>';
+          return;
+        }
+
+        if (data.length === 0) {
+          resultado.innerHTML = '<p>Nenhum resultado encontrado.</p>';
+          return;
+        }
+
+        resultado.innerHTML = '';
+        data.forEach(produto => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <h3>${produto.title}</h3>
+            <img src="${produto.img}" alt="${produto.title}" />
+            <p><strong>Avaliação:</strong> ${produto.rating}</p>
+            <p><strong>Reviews:</strong> ${produto.reviews}</p>
+          `;
+          resultado.appendChild(card);
+        });
+      } catch (err) {
+        resultado.innerHTML = '<p>Erro ao buscar os dados.</p>';
+        console.error(err);
+      }
+    }
+  </script>
+
+</body>
+</html>

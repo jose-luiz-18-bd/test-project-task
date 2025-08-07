@@ -1,9 +1,3 @@
-# 📦 Amazon Scraper API
-
-Esta aplicação é um backend simples feito em **Node.js + Express** que permite realizar scraping de produtos da **Amazon Brasil** com base em uma palavra-chave de busca.
-
----
-
 ## 🚀 Funcionalidades
 
 - 🔍 Busca por produtos na Amazon com base em uma palavra-chave
@@ -13,24 +7,12 @@ Esta aplicação é um backend simples feito em **Node.js + Express** que permit
 
 ---
 
-## 📁 Estrutura do Projeto
-
-```
-puppeteer-amazon-scraper/
-├── index.ts        # Código principal da API
-├── package.json    # Dependências e scripts
-├── tsconfig.json   # Configuração do TypeScript
-├── README.md       # Documentação
-```
-
----
-
 ## ⚙️ Instalação
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/amazon-scraper-api.git
-cd amazon-scraper-api
+git clone https://github.com/jose-luiz-18-bd/test-project-task
+cd test-project-task
 ```
 
 2. Instale as dependências:
@@ -38,14 +20,14 @@ cd amazon-scraper-api
 npm install
 ```
 
-3. Compile o TypeScript (se necessário):
+3. Inicie o servidor backend:
 ```bash
-npx tsc
+bun run index.ts
 ```
 
-4. Inicie o servidor:
+4. Inicie o servidor frontend:
 ```bash
-npm start
+npm run dev
 ```
 
 ---
@@ -91,8 +73,10 @@ GET http://localhost:3000/api/scrape?keyword=livro
 
 ## 🧱 Tecnologias Utilizadas
 
-- Node.js
-- Express
+- HTML
+- CSS
+- JavaScript
+- Bun
 - Axios
 - JSDOM
 - TypeScript
@@ -100,28 +84,8 @@ GET http://localhost:3000/api/scrape?keyword=livro
 
 ---
 
-## 🛠️ To-Do / Melhorias Futuras
-
-- [ ] Paginação dos resultados
-- [ ] Filtro por categoria ou avaliação
-- [ ] Deploy na nuvem (Render, Vercel, etc.)
-- [ ] Frontend de demonstração
-
----
-
-## ⚠️ Aviso
-
-Este projeto é apenas para fins educacionais. Scraping de sites como Amazon pode violar seus Termos de Uso.
-
----
-
 ## 🧑‍💻 Autor
 
-Desenvolvido por **José Luiz Santos**  
-📧 jose@example.com
+Desenvolvido por **José Luiz de Jesus Santos**  
+📧 zeluizjsantos@gmail.com
 
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a MIT License.

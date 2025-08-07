@@ -1,5 +1,4 @@
 document.getElementById('searchBtn').addEventListener('click', async () => {
-  console.log('Botão clicado!'); // 👈 importante
 
   const keyword = document.getElementById('keyword').value;
   if (!keyword) return alert('Digite uma palavra-chave');
